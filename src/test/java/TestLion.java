@@ -29,8 +29,6 @@ public class TestLion {
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.getFood("Хищник")).thenReturn(expected);
         List<String> actual = feline.getFood("Хищник");
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
         assertEquals(expected, lion.getFood());
     }
 
@@ -40,9 +38,6 @@ public class TestLion {
         int expected = 1;
         Mockito.when(feline.getKittens()).thenReturn(expected);
         int actual = lion.getKittens();
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
-
         assertEquals(expected, actual);
     }
     }

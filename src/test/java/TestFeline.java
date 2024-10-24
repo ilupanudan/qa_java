@@ -19,8 +19,6 @@ public class TestFeline {
     public void testFelineEatMeat() throws Exception{
         List<String> expected = List.of("Животные","Птицы","Рыба");
         List<String> actual = feline.eatMeat();
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
         Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
         assertEquals(expected, actual);
     }
@@ -30,8 +28,7 @@ public class TestFeline {
     public void testFelineGetFamily() {
         String expected = "Кошачьи";
         String actual = feline.getFamily();
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
+
         assertEquals(expected, actual);
     }
 
@@ -40,8 +37,6 @@ public class TestFeline {
     public void testFelineGetKittens() {
         int expected = 1;
         int actual = feline.getKittens();
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
         assertEquals(expected, actual);
     }
 
@@ -52,8 +47,6 @@ public class TestFeline {
         int expected = 3;
         Mockito.when(feline.getKittens(Mockito.anyInt())).thenReturn(expected);
         int actual = feline.getKittens();
-        System.out.println("Ожидалось: " + expected);
-        System.out.println("Получено: " + actual);
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
         assertEquals(expected, actual);
     }
